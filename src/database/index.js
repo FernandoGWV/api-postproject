@@ -2,8 +2,9 @@ import Sequelize from "sequelize";
 import databaseConfig from "../config/database";
 
 import User from "../models/UserModel";
+import Post from "../models/PostModel";
 
-const models = [User];
+const models = [User, Post];
 
 const connection = new Sequelize(databaseConfig);
 
