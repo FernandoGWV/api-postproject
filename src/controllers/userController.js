@@ -1,3 +1,4 @@
+import Post from "../models/PostModel";
 import User from "../models/UserModel";
 
 class UserController {
@@ -15,7 +16,13 @@ class UserController {
   // index
   async index(req, res) {
     try {
-      const users = await User.findAll({ attributes: ["id", "email", "nome"] });
+      const users = await User.findAll({
+        attributes: ["id", "email", "nome"],
+        include: {
+          model: Post,
+          attributes: ["title", "descripte"],
+        },
+      });
       return res.json(users);
     } catch (e) {
       return res.json(null);
@@ -26,9 +33,15 @@ class UserController {
 
   async show(req, res) {
     try {
-      const user = await User.findByPk(req.params.id);
-      const { nome, id, email } = user;
-      res.json({ nome, id, email });
+      const user = await User.findByPk(req.params.id, {
+        attributes: ["email", "nome", "id"],
+        include: {
+          model: Post,
+          attributes: ["title", "descripte"],
+        },
+      });
+
+      res.json(user);
     } catch (error) {
       res.json(console.log(error));
     }

@@ -4,6 +4,14 @@ export default class Post extends Model {
   static init(sequelize) {
     super.init(
       {
+        user_id: {
+          type: Sequelize.INTEGER,
+          primaryKey: true,
+          references: {
+            model: "User",
+            key: "id",
+          },
+        },
         title: {
           type: Sequelize.STRING,
           defaultValue: "",
