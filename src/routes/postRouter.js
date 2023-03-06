@@ -8,5 +8,6 @@ router.get("/store", loginRequired, postController.store);
 router.get("/all", postController.index);
 router.get("/:id", postController.show);
 router.put("/", loginRequired, postController.update);
+router.delete("/delete:id", loginRequired, postController.delete);
 
 export default router;

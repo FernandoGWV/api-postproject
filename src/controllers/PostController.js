@@ -39,6 +39,8 @@ class PostController {
     }
   }
 
+  0;
+
   async update(req, res) {
     try {
       const post = await Post.findByPk(req.userId);
@@ -54,6 +56,25 @@ class PostController {
       const { userId } = newPost;
       const getPost = await Post.findByPk(req.userId);
       return res.json({ getPost, userId });
+    } catch (error) {
+      console.log(error);
+      return res.status(400).json({
+        errors: ["Error ao atualizar o post."],
+      });
+    }
+  }
+
+  async delete(req, res) {
+    try {
+      const post = await Post.findByPk(req.userId);
+      if (!post) {
+        return res.status(400).json({
+          errors: ["Usuario Não logado"],
+        });
+      }
+      const postId = await Post.findByPk(req.params.id);
+      postId.destroy();
+      return res.json("post deletado com sucesso.");
     } catch (error) {
       console.log(error);
       return res.status(400).json({

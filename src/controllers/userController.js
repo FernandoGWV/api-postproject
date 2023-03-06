@@ -46,6 +46,52 @@ class UserController {
       res.json(console.log(error));
     }
   }
+
+  async update(req, res) {
+    try {
+      const user = await User.findByPk(req.userId);
+      if (!user) {
+        return res.status(400).json({
+          errors: ["Usuario não existe."],
+        });
+      }
+      const { email, nome, id } = user;
+      const newData = await User.update(req.body, {
+        where: { email, nome, id },
+      });
+      console.log(newData);
+      const newUserUpdate = await User.findByPk(req.userId, {
+        attributes: ["email", "nome", "id"],
+      });
+      return res.json(newUserUpdate);
+    } catch (error) {
+      console.log(error);
+      return res.status(400).json({
+        errors: ["Error ao atualizar o usuario."],
+      });
+    }
+  }
+
+  async delete(req, res) {
+    try {
+      const user = await User.findByPk(req.userId);
+      if (!user) {
+        return res.status(400).json({
+          errors: ["Usuario não existe."],
+        });
+      }
+
+      user.destroy();
+      return res.json({
+        msg: ["Usuario deletado com sucesso"],
+      });
+    } catch (err) {
+      console.log(err);
+      return res.stauts(400).json({
+        errors: ["Error ao deleta o usuario."],
+      });
+    }
+  }
 }
 
 export default new UserController();
