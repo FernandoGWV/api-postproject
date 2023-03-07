@@ -9,7 +9,9 @@ class UserController {
       return res.json({ id, nome, email });
     } catch (e) {
       console.log(e);
-      return res.status(400).json(console.log(e));
+      return res.status(400).json({
+        errros: ["error"],
+      });
     }
   }
 
@@ -43,7 +45,9 @@ class UserController {
 
       res.json(user);
     } catch (error) {
-      res.json(console.log(error));
+      res.json({
+        errors: ["error"],
+      });
     }
   }
 
