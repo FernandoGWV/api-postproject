@@ -5,9 +5,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import "./src/database";
-import userRoutes from "./src/userRoute";
-import tokenRouter from "./src/routes/tokenRoute";
-import postRouter from "./src/routes/postRouter";
+import userRoutes from "./src/Routes/UserRouter";
+import tokenRouter from "./src/Routes/tokenRoute";
+import postRouter from "./src/Routes/postRouter";
 
 class App {
   constructor() {
