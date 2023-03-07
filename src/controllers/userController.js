@@ -8,7 +8,6 @@ class UserController {
       const { id, nome, email } = novoUser;
       return res.json({ id, nome, email });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({
         errros: ["error"],
       });
@@ -69,7 +68,6 @@ class UserController {
       });
       return res.json(newUserUpdate);
     } catch (error) {
-      console.log(error);
       return res.status(400).json({
         errors: ["Error ao atualizar o usuario."],
       });
@@ -90,7 +88,6 @@ class UserController {
         msg: ["Usuario deletado com sucesso"],
       });
     } catch (err) {
-      console.log(err);
       return res.stauts(400).json({
         errors: ["Error ao deleta o usuario."],
       });
