@@ -1,6 +1,6 @@
 import { Router } from "express";
-import UserController from "../controllers/userController.js";
-import loginRequired from "../middlewares/loginRequired.js";
+import UserController from "../controllers/userController";
+import loginRequired from "../middlewares/loginRequired";
 
 const router = new Router();
 
