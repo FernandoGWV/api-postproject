@@ -11,7 +11,7 @@ export default class User extends Model {
           validate: {
             len: {
               args: [3, 20],
-              msg: "O campo precisa ter entre 3 a 20 caracteres.",
+              msg: "O campo precisa ter entre 3 à 20 caracteres.",
             },
           },
         },
