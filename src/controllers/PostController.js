@@ -1,4 +1,4 @@
-import Post from "../models/PostModel.js";
+import Post from "../models/PostModel";
 
 class PostController {
   async store(req, res) {
