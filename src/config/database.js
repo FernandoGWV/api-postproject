@@ -1,6 +1,7 @@
-require("dotenv").config();
+import dotenv from "dotenv";
 
-module.exports = {
+dotenv.config();
+export default {
   dialect: "mariadb",
   database: process.env.DB,
   host: process.env.DB_HOST,

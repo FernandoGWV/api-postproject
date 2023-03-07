@@ -1,7 +1,8 @@
-import User from "../models/UserModel";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+import User from "../models/UserModel.js";
 
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
+dotenv.config();
 
 class TokenController {
   async store(req, res) {

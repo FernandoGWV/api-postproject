@@ -4,10 +4,10 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import "./src/database";
-import userRoutes from "./src/routes/userRouter";
-import tokenRouter from "./src/routes/tokenRoute";
-import postRouter from "./src/routes/postRouter";
+import "./src/database/index.js";
+import userRoutes from "./src/routes/userRouter.js";
+import tokenRouter from "./src/routes/tokenRoute.js";
+import postRouter from "./src/routes/postRouter.js";
 
 class App {
   constructor() {

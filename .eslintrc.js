@@ -18,5 +18,6 @@ module.exports = {
     "comma-dangle": "off",
     "import/no-unresolved": "off",
     camelcase: "off",
+    "import/extensions": "off",
   },
 };

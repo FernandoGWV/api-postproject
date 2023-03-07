@@ -1,12 +1,11 @@
 import Sequelize from "sequelize";
-import databaseConfig from "../config/database";
-
-import User from "../models/UserModel";
-import Post from "../models/PostModel";
+import dataConfig from "../config/database.js";
+import User from "../models/UserModel.js";
+import Post from "../models/PostModel.js";
 
 const models = [User, Post];
 
-const connection = new Sequelize(databaseConfig);
+const connection = new Sequelize(dataConfig);
 
 models.forEach((model) => model.init(connection));
 models.forEach(
