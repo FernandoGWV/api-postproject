@@ -1,5 +1,5 @@
-import Post from "../models/PostModel.js";
-import User from "../models/UserModel.js";
+import Post from "./models/PostModel.js";
+import User from "./models/UserModel.js";
 
 class UserController {
   async store(req, res) {
