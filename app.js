@@ -5,7 +5,7 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import "./src/database";
-import userRoutes from "./src/routes/userRoute";
+import userRoutes from "./src/userRoute";
 import tokenRouter from "./src/routes/tokenRoute";
 import postRouter from "./src/routes/postRouter";
 
