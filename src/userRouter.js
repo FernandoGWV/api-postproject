@@ -4,7 +4,7 @@ import loginRequired from "./middlewares/loginRequired.js";
 
 const router = new Router();
 
-router.post("/create", UserController.store);
+router.post("/new", UserController.store);
 router.get("/all", UserController.index);
 router.get("/user:id", UserController.show);
 router.put("/newuser", loginRequired, UserController.update);
