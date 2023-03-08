@@ -8,8 +8,9 @@ class UserController {
       const { id, nome, email } = novoUser;
       return res.json({ id, nome, email });
     } catch (e) {
+      console.log(e);
       return res.status(400).json({
-        errros: ["error"],
+        errors: e.errors.map((e) => e.message),
       });
     }
   }
