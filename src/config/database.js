@@ -1,11 +1,11 @@
-import dotenv from "dotenv";
-import { Sequelize } from "sequelize";
+require("dotenv").config();
 
-dotenv.config();
-export default {
+module.exports = {
   dialect: "mariadb",
+  host: process.env.DB_HOST,
   database: process.env.DB,
   port: process.env.DB_PORT,
+  sslmode: process.env.SSLMODE,
   password: process.env.DB_PW,
   username: process.env.DB_USER,
   define: {

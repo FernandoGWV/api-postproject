@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
-import dataConfig from "../config/database.js";
-import User from "../models/UserModel.js";
-import Post from "../models/PostModel.js";
+import dataConfig from "../config/database";
+import User from "../models/UserModel";
+import Post from "../models/PostModel";
 
 const models = [User, Post];
 
